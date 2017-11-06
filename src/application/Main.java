@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("view/GetGrubMain.fxml"));
-			primaryStage.setScene(new Scene(root, 984, 535));
+			primaryStage.setScene(new Scene(root, 650, 500));
 			primaryStage.setTitle("Get Grub");
 			primaryStage.show();
 		} catch(Exception e) {
