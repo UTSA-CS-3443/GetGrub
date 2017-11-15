@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import application.model.MainPage;
 import javafx.event.ActionEvent;
@@ -11,16 +12,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import application.model.Order;
 
 public class OrderController implements EventHandler<ActionEvent> {
 //	@FXML
-	
+	private ArrayList<Order> currentOrders;
 	
 	/**
 	 * constructor sets up a Calculator
 	 */
 	public OrderController() {
 		super();
+		this.currentOrders = new ArrayList<Order>();
+		
 	}
 
 	public void returnHomeButton(ActionEvent event) throws IOException
@@ -33,27 +37,35 @@ public class OrderController implements EventHandler<ActionEvent> {
 	
 	public void AddFoodToTable(ActionEvent event) {
 		Button b = (Button)event.getSource();
+		
 		String str = b.getText();
 		if(str.equals("Crunchy Taco W/Beef")) {
 			System.out.println(str);
+			Order newItem = new Order(5.00,str);
+			
 		}
 		else if(str.equals("Soft Taco W/Beef")) {
 			System.out.println(str);
+			Order newItem = new Order(5.00,str);
 		}
 		else if(str.equals("Soft Taco W/Chicken")) {
 			System.out.println(str);
+			Order newItem = new Order(5.00,str);
 		}
 		else if(str.equals("Crunchy Taco W/Chicken")) {
 			System.out.println(str);
+			Order newItem = new Order(5.00,str);
 		}
 		else if(str.equals("Beef Burrito")) {
 			System.out.println(str);
+			Order newItem = new Order(5.00,str);
 		}
 		else if(str.equals("Chicken Burrito")) {
 			System.out.println(str);
+			Order newItem = new Order(5.00,str);
 		}
 		else {
-			System.out.println("Item not found");
+			System.out.println(str+"Item not found");
 		}
 	}
 
