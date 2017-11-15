@@ -29,7 +29,7 @@
             <Label text="Total:" textAlignment="JUSTIFY" textFill="WHITE" />
          </children>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="444.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Place Order" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="444.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#placeOrder" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Place Order" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
       <TabPane layoutX="344.0" layoutY="84.0" prefHeight="339.0" prefWidth="282.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Food">
@@ -47,12 +47,12 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#AddFoodToTable" prefHeight="124.0" prefWidth="148.0" text="Crunchy Taco W/Beef" />
-                              <Button mnemonicParsing="false" onAction="#AddFoodToTable" prefHeight="144.0" prefWidth="241.0" text="Soft Taco W/Beef" GridPane.columnIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#AddFoodToTable" prefHeight="167.0" prefWidth="229.0" text="Crunchy Taco W/Chicken" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#AddFoodToTable" prefHeight="138.0" prefWidth="272.0" text="Soft Taco W/Chicken" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#AddFoodToTable" prefHeight="128.0" prefWidth="212.0" text="Beef Burrito" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" onAction="#AddFoodToTable" prefHeight="103.0" prefWidth="245.0" text="Chicken Burrito" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#addFoodToTable" prefHeight="124.0" prefWidth="148.0" text="Crunchy Taco W/Beef" />
+                              <Button mnemonicParsing="false" onAction="#addFoodToTable" prefHeight="144.0" prefWidth="241.0" text="Soft Taco W/Beef" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addFoodToTable" prefHeight="167.0" prefWidth="229.0" text="Crunchy Taco W/Chicken" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addFoodToTable" prefHeight="138.0" prefWidth="272.0" text="Soft Taco W/Chicken" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addFoodToTable" prefHeight="128.0" prefWidth="212.0" text="Beef Burrito" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#addFoodToTable" prefHeight="103.0" prefWidth="245.0" text="Chicken Burrito" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
                      </children>
@@ -65,10 +65,10 @@
                      <children>
                         <GridPane prefHeight="234.0" prefWidth="279.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#AddDrinkToTable" prefHeight="124.0" prefWidth="148.0" text="Soft Drink" />
-                              <Button mnemonicParsing="false" onAction="#AddDrinkToTable" prefHeight="144.0" prefWidth="241.0" text="Water" GridPane.columnIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#AddDrinkToTable" prefHeight="167.0" prefWidth="229.0" text="Tea" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#AddDrinkToTable" prefHeight="138.0" prefWidth="272.0" text="Lemonade" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addDrinkToTable" prefHeight="124.0" prefWidth="148.0" text="Soft Drink" />
+                              <Button mnemonicParsing="false" onAction="#addDrinkToTable" prefHeight="144.0" prefWidth="241.0" text="Water" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addDrinkToTable" prefHeight="167.0" prefWidth="229.0" text="Tea" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addDrinkToTable" prefHeight="138.0" prefWidth="272.0" text="Lemonade" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

@@ -9,7 +9,7 @@ public class Order {
 		this.orderItem = itemOrder;
 	}
 	
-	public double getTotal() {
+	public double getPrice() {
 		return this.price;
 	}
 	

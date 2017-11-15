@@ -17,6 +17,7 @@ import application.model.Order;
 public class OrderController implements EventHandler<ActionEvent> {
 //	@FXML
 	private ArrayList<Order> currentOrders;
+	private final double tax = .0825;
 	
 	/**
 	 * constructor sets up a Calculator
@@ -35,59 +36,133 @@ public class OrderController implements EventHandler<ActionEvent> {
 		window.setScene(viewScene);
 	}
 	
-	public void AddFoodToTable(ActionEvent event) {
+	public void addFoodToTable(ActionEvent event) {
 		Button b = (Button)event.getSource();
 		
 		String str = b.getText();
 		if(str.equals("Crunchy Taco W/Beef")) {
 			System.out.println(str);
-			Order newItem = new Order(5.00,str);
-			
+			Order newItem = new Order(1.50,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Soft Taco W/Beef")) {
 			System.out.println(str);
-			Order newItem = new Order(5.00,str);
+			Order newItem = new Order(2.00,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Soft Taco W/Chicken")) {
 			System.out.println(str);
-			Order newItem = new Order(5.00,str);
+			Order newItem = new Order(2.00,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Crunchy Taco W/Chicken")) {
 			System.out.println(str);
-			Order newItem = new Order(5.00,str);
+			Order newItem = new Order(1.50,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Beef Burrito")) {
 			System.out.println(str);
-			Order newItem = new Order(5.00,str);
+			Order newItem = new Order(2.99,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Chicken Burrito")) {
 			System.out.println(str);
-			Order newItem = new Order(5.00,str);
+			Order newItem = new Order(2.79,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else {
 			System.out.println(str+"Item not found");
 		}
 	}
 
-	public void AddDrinkToTable(ActionEvent event) {
+	public void addDrinkToTable(ActionEvent event) {
 		Button b = (Button)event.getSource();
 		String str = b.getText();
 		if(str.equals("Soft Drink")) {
 			System.out.println(str);
+			Order newItem = new Order(1.75,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Water")) {
 			System.out.println(str);
+			Order newItem = new Order(.25,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Tea")) {
 			System.out.println(str);
+			Order newItem = new Order(1.00,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else if(str.equals("Lemonade")) {
 			System.out.println(str);
+			Order newItem = new Order(1.50,str);
+			System.out.print(newItem.getItem());
+			System.out.print(" ");
+			System.out.print(newItem.getPrice());
+			System.out.println();
+			currentOrders.add(newItem);
 		}
 		else {
-			System.out.println("Item not found");
+			System.out.println(str+"Item not found");
 		}
 	}
+	
+//	public void updateTotalLabels() {
+//		double totalPrice = 0;
+//		double taxAmmount;
+//		for(Order i: currentOrders) {
+//			totalPrice += i.getPrice();
+//		}
+//		taxAmmount = totalPrice*this.tax;
+//	}
+//	
+//	
+//	public void placeOrder(ActionEvent event) {
+//		double totalPrice = 0;
+//		double taxAmmount;
+//		for(Order i: currentOrders) {
+//			totalPrice += i.getPrice();
+//		}
+//		taxAmmount = totalPrice*this.tax;
+//		System.out.println(totalPrice);
+//		System.out.println(taxAmmount);
+//	}
 	
 	@Override
 	public void handle(ActionEvent arg0) {
