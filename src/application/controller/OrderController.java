@@ -11,11 +11,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import application.model.Order;
 
 public class OrderController implements EventHandler<ActionEvent> {
-//	@FXML
+	@FXML
+	private TableView orderTable;
+	private TableColumn itemName;
+	private TableColumn itemPrice;
+	
 	private ArrayList<Order> currentOrders;
 	private final double tax = .0825;
 	
@@ -25,7 +31,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 	public OrderController() {
 		super();
 		this.currentOrders = new ArrayList<Order>();
-		
+	
 	}
 
 	public void returnHomeButton(ActionEvent event) throws IOException
@@ -48,6 +54,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 			System.out.print(newItem.getPrice());
 			System.out.println();
 			currentOrders.add(newItem);
+			orderTable.setIt
 		}
 		else if(str.equals("Soft Taco W/Beef")) {
 			System.out.println(str);
@@ -153,16 +160,16 @@ public class OrderController implements EventHandler<ActionEvent> {
 //	}
 //	
 //	
-//	public void placeOrder(ActionEvent event) {
-//		double totalPrice = 0;
-//		double taxAmmount;
-//		for(Order i: currentOrders) {
-//			totalPrice += i.getPrice();
-//		}
-//		taxAmmount = totalPrice*this.tax;
-//		System.out.println(totalPrice);
-//		System.out.println(taxAmmount);
-//	}
+	public void placeOrder(ActionEvent event) {
+		double totalPrice = 0;
+		double taxAmmount;
+		for(Order i: currentOrders) {
+			totalPrice += i.getPrice();
+		}
+		taxAmmount = totalPrice*this.tax;
+		System.out.println(String.format("%.2f", totalPrice));
+		System.out.println(String.format("%.2f", taxAmmount));
+	}
 	
 	@Override
 	public void handle(ActionEvent arg0) {
