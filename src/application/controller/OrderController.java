@@ -61,9 +61,12 @@ public class OrderController implements EventHandler<ActionEvent> {
 	}
 	
 	@FXML
-	private void initalize() {
+	public void initialize() {
+		System.out.println("223");
 		menuItem.setCellValueFactory(cellData -> cellData.getValue().menuItemProperty());
 		price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+		orderTable.setItems(getOrderData());
+		
 	}
 
 	public ObservableList<Order> getOrderData(){
@@ -91,6 +94,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 			System.out.print(newItem.getPrice());
 			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(new Order("Crunchy Taco W/Beef",1.50));
 			
 		}
 		else if(str.equals("Soft Taco W/Beef")) {
