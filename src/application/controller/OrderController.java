@@ -21,6 +21,7 @@ import application.model.Order;
 
 public class OrderController implements EventHandler<ActionEvent> {
 	
+	
 	// TABLE
 	@FXML
 	private TableView<Order> orderTable;
@@ -33,7 +34,6 @@ public class OrderController implements EventHandler<ActionEvent> {
 	
 	
 	
-	
 	// LABELS
 	@FXML
 	private Label taxLabel;
@@ -43,6 +43,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 	
 	@FXML 
 	private Label subTotalLabel;
+	
 	
 	
 	//Local class variables
