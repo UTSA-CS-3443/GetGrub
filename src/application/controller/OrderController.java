@@ -75,6 +75,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		menuItem.setCellValueFactory(cellData -> cellData.getValue().menuItemProperty());
 		price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
 		orderTable.setItems(getOrderData());
+		orderTable.setPlaceholder(new Label(""));
 		
 	}
 	
@@ -314,13 +315,14 @@ public class OrderController implements EventHandler<ActionEvent> {
 		System.out.println(String.format("Tea %.2f", (this.tea)));
 		System.out.println(String.format("Lemons %.2f", (this.lemons)));
 		
-		beef = 0;
-		chicken = 0;
-		hardShell = 0;
-		tortilla = 0;
-		lettuce = 0;
-		cheese = 0;
-		lemons = 0;
+		this.beef = 0;
+		this.chicken = 0;
+		this.hardShell = 0;
+		this.tortilla = 0;
+		this.lettuce = 0;
+		this.cheese = 0;
+		this.tea = 0;
+		this.lemons = 0;
 		
 		double reset = 0;
 		this.subTotalLabel.setText(String.format("%.2f", (reset)));

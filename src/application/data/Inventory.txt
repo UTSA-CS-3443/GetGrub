@@ -1,0 +1,8 @@
+beef = 0
+chicken = 0
+hardShell = 0
+tortilla = 0
+lettuce = 0
+cheese = 0
+tea = 0
+lemons = 0
