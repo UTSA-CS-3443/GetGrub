@@ -16,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import application.model.Order;
 
@@ -315,8 +314,21 @@ public class OrderController implements EventHandler<ActionEvent> {
 		System.out.println(String.format("Tea %.2f", (this.tea)));
 		System.out.println(String.format("Lemons %.2f", (this.lemons)));
 		
+		beef = 0;
+		chicken = 0;
+		hardShell = 0;
+		tortilla = 0;
+		lettuce = 0;
+		cheese = 0;
+		lemons = 0;
 		
+		double reset = 0;
+		this.subTotalLabel.setText(String.format("%.2f", (reset)));
+		this.taxLabel.setText(String.format("%.2f", reset));
+		this.totalLabel.setText(String.format("%.2f", (reset)));
 		
+		orders.clear();
+		currentOrders.clear();
 	}
 	
 	@Override
