@@ -21,11 +21,10 @@ import javafx.stage.Stage;
 import application.model.Order;
 
 public class OrderController implements EventHandler<ActionEvent> {
+	
+	// TABLE
 	@FXML
 	private TableView<Order> orderTable;
-	
-	@FXML
-	private Label tax;
 	
 	@FXML
 	private TableColumn<Order, String> menuItem;
@@ -34,41 +33,52 @@ public class OrderController implements EventHandler<ActionEvent> {
 	private TableColumn<Order, Double> price;
 	
 	
+	
+	
+	// LABELS
+	@FXML
+	private Label taxLabel;
+	
+	@FXML 
+	private Label totalLabel;
+	
+	@FXML 
+	private Label subTotalLabel;
+	
+	
+	//Local class variables
+	private double beef = 0;
+	private double chicken = 0;
+	private double hardShell = 0;
+	private double tortilla = 0;
+	private double lettuce = 0;
+	private double cheese = 0;
+	private double tea = 0;
+	private double lemons = 0;
+	
+	
+	//Used for table and order total calculations
 	private ArrayList<Order> currentOrders;
 	private final ObservableList<Order> orders = FXCollections.observableArrayList();
-	private final double taxAmmount = .0825;
 	
 	
+	//Tax amount based on Texas
+	private final double taxAmount = .0825;
+	
+
 	public OrderController() {
 		super();
-		System.out.println("HELLO");
-		this.currentOrders = new ArrayList<Order>();
-		
-		//this.menuItem = new TableColumn<>("Item");
-		//menuItem.setMinWidth(165);
-		//this.menuItem.setCellValueFactory(new PropertyValueFactory<Order, String>("menuItem"));
-
-		//this.price = new TableColumn<>("Price");
-		//price.setMinWidth(160);
-		//this.price.setCellValueFactory(new PropertyValueFactory<Order, Double>("price"));
-
-		//orders.add(new Order("Crunchy Taco W/Beef",1.50));
-		
-		//orderTable = new TableView<>();
-		//orderTable.setItems(getOrderData());
-		//orderTable.getColumns().addAll(itemName,itemPrice);
-		
+		this.currentOrders = new ArrayList<Order>();		
 	}
 	
 	@FXML
 	public void initialize() {
-		System.out.println("223");
 		menuItem.setCellValueFactory(cellData -> cellData.getValue().menuItemProperty());
 		price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
 		orderTable.setItems(getOrderData());
 		
 	}
-
+	
 	public ObservableList<Order> getOrderData(){
 		return this.orders;
 	}
@@ -81,72 +91,120 @@ public class OrderController implements EventHandler<ActionEvent> {
 		window.setScene(viewScene);
 	}
 	
+	
 	public void addFoodToTable(ActionEvent event) {
 		Button b = (Button)event.getSource();
 		
 		String str = b.getText();
 		if(str.equals("Crunchy Taco W/Beef")) {
-			this.tax.setText("100");
 			System.out.println(str);
 			Order newItem = new Order(str,1.50);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
-			orders.add(new Order("Crunchy Taco W/Beef",1.50));
+			orders.add(newItem);
+			updateTotalLabels();
+			this.beef += .25;
+			this.hardShell += 1;
+			this.lettuce += .1;
+			this.cheese += .1;
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug				System.out.print(newItem.getPrice());
+//Debug			System.out.println();	
 			
 		}
+		
 		else if(str.equals("Soft Taco W/Beef")) {
 			System.out.println(str);
 			Order newItem = new Order(str,2.00);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.beef += .25;
+			this.tortilla += 1;
+			this.lettuce += .1;
+			this.cheese += .1;
 			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
 			
 		}
+		
 		else if(str.equals("Soft Taco W/Chicken")) {
 			System.out.println(str);
 			Order newItem = new Order(str,2.00);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.chicken += .25;
+			this.tortilla += 1;
+			this.lettuce += .1;
+			this.cheese += .1;
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else if(str.equals("Crunchy Taco W/Chicken")) {
 			System.out.println(str);
 			Order newItem = new Order(str,1.50);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.chicken += .25;
+			this.hardShell += 1;
+			this.lettuce += .1;
+			this.cheese += .1;
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else if(str.equals("Beef Burrito")) {
 			System.out.println(str);
 			Order newItem = new Order(str,2.99);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.beef += .5;
+			this.tortilla += 1;
+			
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else if(str.equals("Chicken Burrito")) {
 			System.out.println(str);
 			Order newItem = new Order(str,2.79);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.chicken += .5;
+			this.tortilla += 1;
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else {
 			System.out.println(str+"Item not found");
 		}
+		
 	}
 
 	public void addDrinkToTable(ActionEvent event) {
@@ -155,63 +213,110 @@ public class OrderController implements EventHandler<ActionEvent> {
 		if(str.equals("Soft Drink")) {
 			System.out.println(str);
 			Order newItem = new Order(str,1.75);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else if(str.equals("Water")) {
 			System.out.println(str);
 			Order newItem = new Order(str,.25);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else if(str.equals("Tea")) {
 			System.out.println(str);
 			Order newItem = new Order(str,1.00);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.tea += .21;
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();
+			
 		}
+		
 		else if(str.equals("Lemonade")) {
 			System.out.println(str);
 			Order newItem = new Order(str,1.50);
-			System.out.print(newItem.getMenuItem());
-			System.out.print(" ");
-			System.out.print(newItem.getPrice());
-			System.out.println();
 			currentOrders.add(newItem);
+			orders.add(newItem);
+			updateTotalLabels();
+			this.lemons += 1.5;
+			
+//Debug			System.out.print(newItem.getMenuItem());
+//Debug			System.out.print(" ");
+//Debug			System.out.print(newItem.getPrice());
+//Debug			System.out.println();	
+			
 		}
+		
 		else {
+			
 			System.out.println(str+"Item not found");
+			
 		}
+			
 	}
 	
-//	public void updateTotalLabels() {
-//		double totalPrice = 0;
-//		double taxAmmount;
-//		for(Order i: currentOrders) {
-//			totalPrice += i.getPrice();
-//		}
-//		taxAmmount = totalPrice*this.tax;
-//	}
-//	
-//	
-	public void placeOrder(ActionEvent event) {
+	public void updateTotalLabels() {
 		double totalPrice = 0;
-		double taxAmmount;
+		double taxValue;
+		
 		for(Order i: currentOrders) {
 			totalPrice += i.getPrice();
 		}
-		taxAmmount = totalPrice*this.taxAmmount;
-		System.out.println(String.format("%.2f", totalPrice));
-		System.out.println(String.format("%.2f", taxAmmount));
+		
+		taxValue = totalPrice*this.taxAmount;
+		
+		this.subTotalLabel.setText(String.format("%.2f", (totalPrice)));
+		this.taxLabel.setText(String.format("%.2f", taxValue));
+		this.totalLabel.setText(String.format("%.2f", (totalPrice+taxValue)));
+		
+	}
+	
+	public void placeOrder(ActionEvent event) {
+		double totalPrice = 0;
+		double taxValue;
+		
+		
+		for(Order i: currentOrders) {
+			totalPrice += i.getPrice();
+		}
+		
+		taxValue = totalPrice*this.taxAmount;
+		
+		System.out.println(String.format("%.2f", (totalPrice+taxValue)));
+		System.out.println(String.format("Beef %.2f", (this.beef)));
+		System.out.println(String.format("Chicken %.2f", (this.chicken)));
+		System.out.println(String.format("Hard Shell %.2f", (this.hardShell)));
+		System.out.println(String.format("Tortilla %.2f", (this.tortilla)));
+		System.out.println(String.format("Lettuce %.2f", (this.lettuce)));
+		System.out.println(String.format("Cheese %.2f", (this.cheese)));
+		
+		System.out.println(String.format("Tea %.2f", (this.tea)));
+		System.out.println(String.format("Lemons %.2f", (this.lemons)));
+		
+		
+		
 	}
 	
 	@Override

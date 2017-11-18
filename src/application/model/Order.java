@@ -11,6 +11,7 @@ public class Order {
 	private	final DoubleProperty price;
 	
 	
+	
 	public Order(String itemOrder,double itemPrice) {
 		this.menuItem = new SimpleStringProperty(itemOrder);
 		this.price = new SimpleDoubleProperty(itemPrice);
