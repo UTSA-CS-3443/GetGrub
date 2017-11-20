@@ -9,7 +9,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="649.0" style="-fx-background-color: #2d3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.InventoryController">
    <children>
-      <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#returnHomeButton" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+      <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#returnHomeButton" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Home" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <Label layoutX="275.0" layoutY="13.0" text="Inventory" textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -40,53 +43,56 @@
                            <children>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="7">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Lemons" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Chicken" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="2">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Hard Shell" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="3">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Tortilla" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="4">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Lettuce" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="5">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Cheese" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="6">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="12.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="12.0" text="Tea" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="11.0" text="Label" />
+                                    <Label layoutX="14.0" layoutY="11.0" text="Beef" />
                                  </children>
                               </Pane>
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                              <Pane prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" text="Order" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Pane prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label fx:id="beefStock" layoutX="18.0" layoutY="4.0" />
+                                 </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -100,7 +106,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Deliveries">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
