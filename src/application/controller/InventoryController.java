@@ -92,5 +92,13 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		//this.teaStock.setText(String.format("%.2f", (teaT)));
 		//this.lemonStock.setText(String.format("%.2f", (lemonT)));
 	}
-
+	
+	/*public addToTotal(String itemName) {
+	if  (itemName == "beef"){
+	beefT = beefT + itemAmount;
+	} else if (itemName == "chicken"){ 
+	//etc...
+	 }
+	}
+*/
 }
