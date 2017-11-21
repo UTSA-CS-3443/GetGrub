@@ -39,7 +39,7 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	@FXML
 	private Label lemonStock;
 	
-	private double beefT;
+	private double beefT = 50.00;
 	private double chickenT;
 	private double shellT;
 	private double tortillaT;
@@ -55,6 +55,12 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		super();
 	}
 
+	@FXML
+	public void initialize() {
+		updateLabels();
+		
+	}
+	
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	
 		Stage window = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -69,16 +75,22 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		// TODO Auto-generated method stub
 		
 	}
+	public void orderItemForDelivery()
+	{
+		System.out.print("I do nothing right now");
+	}
+	
+	
 	public void updateLabels() {
 		
 		this.beefStock.setText(String.format("%.2f", (beefT)));
-		this.chickenStock.setText(String.format("%.2f", chickenT));
-		this.hardSStock.setText(String.format("%.2f", (shellT)));
-		this.tortillaStock.setText(String.format("%.2f", (tortillaT)));
-		this.lettuceStock.setText(String.format("%.2f", (lettuceT)));
-		this.cheeseStock.setText(String.format("%.2f", (cheeseT)));
-		this.teaStock.setText(String.format("%.2f", (teaT)));
-		this.lemonStock.setText(String.format("%.2f", (lemonT)));
+		//this.chickenStock.setText(String.format("%.2f", chickenT));
+		//this.hardSStock.setText(String.format("%.2f", (shellT)));
+		//this.tortillaStock.setText(String.format("%.2f", (tortillaT)));
+		//this.lettuceStock.setText(String.format("%.2f", (lettuceT)));
+		//this.cheeseStock.setText(String.format("%.2f", (cheeseT)));
+		//this.teaStock.setText(String.format("%.2f", (teaT)));
+		//this.lemonStock.setText(String.format("%.2f", (lemonT)));
 	}
 
 }
