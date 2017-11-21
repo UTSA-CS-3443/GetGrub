@@ -98,30 +98,37 @@
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
                                     <Label fx:id="chickenStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="69.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <children>
                                     <Label fx:id="hardSStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <children>
                                     <Label fx:id="tortillaStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <children>
                                     <Label fx:id="lettuceStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                  <children>
                                     <Label fx:id="cheeseStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <children>
                                     <Label fx:id="teaStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                  <children>
                                     <Label fx:id="lemonStock" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
                                  </children></Pane>
                            </children>
                         </GridPane>
@@ -133,12 +140,122 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="341.0" prefWidth="556.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
-                          </columns>
-                        </TableView>
+                        <TableView prefHeight="361.0" prefWidth="556.0" AnchorPane.leftAnchor="0.0" />
+                        <GridPane layoutX="8.0" layoutY="10.0" prefHeight="319.0" prefWidth="556.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Lemons" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Chicken" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Hard Shell" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Tortilla" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Lettuce" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Cheese" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Tea" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="Beef" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label fx:id="beefT1" layoutX="18.0" layoutY="4.0" />
+                                    <Label fx:id="beefStock1" layoutX="34.0" layoutY="11.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="11.0" text="lb" />
+                                    <Label layoutX="18.0" layoutY="9.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label fx:id="chickenStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="69.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="17.0" layoutY="10.0" prefHeight="21.0" prefWidth="15.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="hardSStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="17.0" layoutY="13.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label fx:id="tortillaStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="18.0" layoutY="12.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label fx:id="lettuceStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="18.0" layoutY="10.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label fx:id="cheeseStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="18.0" layoutY="11.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label fx:id="teaStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="19.0" layoutY="11.0" text="+" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label fx:id="lemonStock1" layoutX="34.0" layoutY="12.0" text="0.00" />
+                                    <Label layoutX="68.0" layoutY="12.0" text="lb" />
+                                    <Label layoutX="19.0" layoutY="11.0" text="+" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0" prefWidth="366.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0" prefWidth="88.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="40.0" minHeight="2.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
                      </children></AnchorPane>
             </content>
           </Tab>
