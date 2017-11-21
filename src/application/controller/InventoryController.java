@@ -41,7 +41,7 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	
 	private double beefT = 50.00;
 	private double chickenT = 35.00;
-	private double shellT 15.00;
+	private double shellT = 15.00;
 	private double tortillaT;
 	private double lettuceT;
 	private double cheeseT;
