@@ -73,6 +73,7 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	
 	public InventoryController() {
 		super();
+		currentInventories = new ArrayList<Inventory>();
 	}
 
 	@FXML
