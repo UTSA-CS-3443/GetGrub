@@ -68,7 +68,7 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 	public void setChartInfo() {
 		Scanner scan;
 		try {
-			URL url = getClass().getResource("DailyTotals.txt");
+			URL url = getClass().getResource("./src/application/data/DailyTotals.txt");
 			File file = new File(url.getPath());
 			scan = new Scanner(file);
 			int i = 0;
@@ -109,13 +109,13 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 		//showChartA();
 		
 		//testing for updateIncome in Financials
-		try {
+	/*	try {
 			Financials.updateIncome("01/01/2017", 5.00);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} //end test
-		
+	*/	
 		//temporary values for income, expenses, profit will be chaged when file io figured out/ fixed
 		double income = 5; //incomeList[incomeList.length];
 		double expenses = 2; //expenseList[expenseList.length];
