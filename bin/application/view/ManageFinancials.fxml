@@ -17,62 +17,10 @@
         <Font size="24.0" />
       </font>
     </Label>
-    <TabPane layoutX="0.0" layoutY="176.0" prefHeight="324.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="195.0">
-      <tabs>
-        <Tab text="Profits">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <LineChart id="LineChart" layoutX="0.0" layoutY="0.0" prefHeight="287.0" prefWidth="649.0" title="">
-                  <xAxis>
-                    <CategoryAxis id="dates" side="BOTTOM" />
-                  </xAxis>
-                  <yAxis>
-                    <NumberAxis side="LEFT" />
-                  </yAxis>
-                </LineChart>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Income">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <LineChart id="LineChart" layoutX="0.0" layoutY="0.0" prefHeight="287.0" prefWidth="649.0" title="">
-                  <xAxis>
-                    <CategoryAxis side="BOTTOM" />
-                  </xAxis>
-                  <yAxis>
-                    <NumberAxis side="LEFT" />
-                  </yAxis>
-                </LineChart>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Expenses">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <LineChart id="LineChart" layoutX="0.0" layoutY="0.0" prefHeight="287.0" prefWidth="649.0" title="">
-                  <xAxis>
-                    <CategoryAxis side="BOTTOM" />
-                  </xAxis>
-                  <yAxis>
-                    <NumberAxis side="LEFT" />
-                  </yAxis>
-                </LineChart>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-      </tabs>
-    </TabPane>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="93.0" layoutX="43.0" layoutY="73.0" stroke="BLACK" strokeType="INSIDE" width="578.0" />
     <Text layoutX="263.0" layoutY="104.0" scaleX="1.0650816844835904" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Totals" textAlignment="LEFT">
       <font>
-        <Font size="20.0" />
+        <Font size="20.0" fx:id="x2" />
       </font>
     </Text>
     <Text layoutX="69.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profit:">
@@ -85,5 +33,20 @@
     <Label fx:id="profitToday" font="$x1" layoutX="119.0" layoutY="122.0" prefWidth="64.0" text="\$0.00" textFill="BLACK" />
     <Label fx:id="expensesToday" font="$x1" layoutX="540.0" layoutY="122.0" prefWidth="63.44970703125" text="\$0.00" textFill="BLACK" />
     <Label fx:id="incomeToday" font="$x1" layoutX="332.0" layoutY="122.0" prefWidth="64.0" text="\$0.00" textFill="BLACK" />
+    <LineChart fx:id="lineChart" blendMode="SCREEN" depthTest="INHERIT" layoutX="133.0" layoutY="166.0" legendSide="BOTTOM" pickOnBounds="true" prefHeight="334.0" prefWidth="515.9999000000025">
+      <xAxis>
+        <CategoryAxis fx:id="x" side="BOTTOM" />
+      </xAxis>
+      <yAxis>
+        <NumberAxis fx:id="y" side="LEFT" tickLabelFill="WHITE">
+          <tickLabelFont>
+            <Font name="Arial Bold" size="10.0" />
+          </tickLabelFont>
+        </NumberAxis>
+      </yAxis>
+    </LineChart>
+    <ToggleButton fx:id="showProfit" font="$x1" layoutX="14.0" layoutY="251.0" minHeight="32.0" mnemonicParsing="false" onAction="#showChart" prefHeight="32.0" prefWidth="118.99990000000253" text="Profit" textAlignment="CENTER" textOverrun="CLIP" />
+    <ToggleButton fx:id="showIncome" font="$x1" layoutX="14.0" layoutY="313.0" minHeight="31.999900000002526" mnemonicParsing="false" onAction="#showChart" prefHeight="32.0" prefWidth="118.99990000000253" text="Income" textAlignment="CENTER" />
+    <ToggleButton fx:id="showExpenses" font="$x1" layoutX="14.0" layoutY="380.0" minHeight="32.0" mnemonicParsing="false" onAction="#showChart" prefHeight="33.0" prefWidth="118.99990000000253" text="Expenses" textAlignment="CENTER" />
   </children>
 </AnchorPane>

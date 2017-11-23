@@ -1,60 +1,73 @@
 package application.controller;
 
+import java.awt.Color;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 import application.model.Financials;
+import application.model.LineChartA;
 import application.model.Order;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.Axis;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
 public class FinancialsController  implements EventHandler<ActionEvent> {
 	
 	//labels for Today's Totals section	
 	@FXML 
-	private Label profitToday;
-	
+	private Label profitToday;	
 	@FXML 
-	private Label incomeToday;
-	
+	private Label incomeToday;	
 	@FXML 
 	private Label expensesToday;
 	
 	//set up for charts (A - profit, B - income, C - expenses
-	@FXML
-    private LineChart<String, Double> chartA;
+    @FXML
+    private LineChart<String, Double> lineChart;
 
     @FXML
-    private CategoryAxis xAxis;
+    private CategoryAxis x;
+
+    @FXML
+    private Axis<Double> y;
     
     @FXML
-    private LineChart<String, Double> chartB;
+    private ToggleButton showProfit;
     
     @FXML
-    private LineChart<String, Double> chartC;
+    private ToggleButton showIncome;
     
     @FXML
-    private ObservableList<String> dates;
-	
-    //used to hold data read from file *days contains temporary values for testing*
-	private String[] days = {"01/01/17", "01/02/17"};
-	private double[] incomeList;
-	private double[] expenseList;
+    private ToggleButton showExpenses;
+	//Series for chart
+	XYChart.Series<String, Double> seriesP = new XYChart.Series<String, Double>();
+	XYChart.Series<String, Double>  seriesI = new XYChart.Series<String, Double>();
+	XYChart.Series<String, Double>  seriesE = new XYChart.Series<String, Double>();
     
     /**
 	 * constructor sets up a Calculator
@@ -62,85 +75,65 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 	public FinancialsController() {
 		super();
 	}
-	
-	
-	//reading from file into arrays days, incomeList, and expenseList to be used in chart and totals output
-	public void setChartInfo() {
-		Scanner scan;
-		try {
-			URL url = getClass().getResource("./src/application/data/DailyTotals.txt");
-			File file = new File(url.getPath());
-			scan = new Scanner(file);
-			int i = 0;
-			while(scan.hasNext()) {
-				days[i] = scan.next();
-				incomeList[i] = scan.nextDouble();
-				expenseList[i] = scan.nextDouble();
-				i++;
-			}
-			scan.close();
-		}
-		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		//test print
-		for(int i=0;i<days.length;i++) {
-			System.out.print(days[i]+ " | ");	
-		}
-		System.out.print("\n");
-		for(int i=0;i<incomeList.length;i++) {
-			System.out.print(incomeList[i] + " | ");	
-		}
-		System.out.print("\n");
-		for(int i=0;i<expenseList.length;i++) {
-			System.out.print(expenseList[i]+ " | ");	
-		}
-		System.out.print("\n");
-		//end test print
-	}
 
-	//
 	@FXML
 	public void initialize() {
-		//setChartInfo();
-		//showChartA();
+		try {
+			//uses Financials to read the data from file
+			Financials fl = new Financials();
+			/*--------TESTING FOR undateIncome()-------------
+			fl.updateIncome("01/04/2017", 50.00);
+			fl.updateIncome("01/06/2017", 10.00);
+			----------END TEST-------------------------------*/
+			fl.getData();
+			//gets most recent day's income, expense, and profit
+			double income = fl.incomeList.get(fl.incomeList.size()-1);
+			double expenses = fl.expenseList.get(fl.expenseList.size()-1);
+			double profit = income - expenses;
+			//Updates Profit, Income, and Expenses fields in "Today's Totals" section
+			this.profitToday.setText(String.format("$%.2f", (profit)));
+			this.incomeToday.setText(String.format("$%.2f", (income)));
+			this.expensesToday.setText(String.format("$%.2f", (expenses)));
 		
-		//testing for updateIncome in Financials
-	/*	try {
-			Financials.updateIncome("01/01/2017", 5.00);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} //end test
-	*/	
-		//temporary values for income, expenses, profit will be chaged when file io figured out/ fixed
-		double income = 5; //incomeList[incomeList.length];
-		double expenses = 2; //expenseList[expenseList.length];
-		double profit = income - expenses;
-		this.profitToday.setText(String.format("$%.2f", (profit)));
-		this.incomeToday.setText(String.format("$%.2f", (income)));
-		this.expensesToday.setText(String.format("$%.2f", (expenses)));
-		
-		
-		
-		
-	}
-	// Will put data into chart - will make others for chartB and chartC once figured out
-	public void showChartA() {
-		dates.addAll(Arrays.asList(days));
-		xAxis.setCategories(dates);
-		XYChart.Series<String, Double> series = new XYChart.Series<>();
+			lineChart.setAnimated(false);
+			
+			//Takes profitList, incomeList, and expenseList data and puts it into a series for the chart		
+			seriesI.setName("Income");
+			for(int k=0; k<fl.incomeList.size(); k++) {
+				seriesI.getData().add(new Data<String, Double>(fl.days.get(k), fl.incomeList.get(k)));
+			}
+			
+			seriesE.setName("Expenses");
+			for(int l=0; l<fl.expenseList.size(); l++) {
+				seriesE.getData().add(new Data<String, Double>(fl.days.get(l), fl.expenseList.get(l)));
+			}
+			
+			seriesP.setName("Profit");
+			for(int m=0; m<fl.expenseList.size(); m++) {
+				seriesP.getData().add(new Data<String, Double>(fl.days.get(m), fl.profitList.get(m)));
+			}
 
-        for (int i = 0; i < days.length; i++) {
-            series.getData().add(new XYChart.Data<>(days[i], (incomeList[i]-expenseList[i])));
-        }
-
-        chartA.getData().add(series);
+		} catch (Exception e) {
+			System.out.println("Failed to in Initialize");
+		} 
 	}
 	
+	// Displays chart based off of which buttons are selected
+	public void showChart(ActionEvent event) throws IOException{
+		//Empties Chart
+		lineChart.getData().clear();
+		//Then adds series for each selected button
+		if(showProfit.isSelected()) {
+			lineChart.getData().addAll(seriesP);
+		}
+		if(showIncome.isSelected()) {
+			lineChart.getData().addAll(seriesI);
+		}
+		if(showExpenses.isSelected()) {
+			lineChart.getData().addAll(seriesE);
+		}
+		
+	}	
 
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	
@@ -150,11 +143,9 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 		window.setScene(viewScene);
 	}
 	
-
 	@Override
 	public void handle(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
-
 }
