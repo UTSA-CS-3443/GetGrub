@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import application.model.Inventory;
 import application.model.Order;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -52,7 +54,9 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	private TableColumn<Inventory, String> stockInfo;
 	
 	//@FXML
-	
+	private TableColumn<Inventory, Inventory> deliveryStatus;
+	//private TableColumn deliveryStatus; 
+	//private TableColumn<Inventory, Inventory> deliveryStatus; 
 	
 	
 	private double beefT = 50.00;
@@ -80,8 +84,58 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	public void initialize() {
 		updateLabels();
 		stockInfo.setCellValueFactory(cellData -> cellData.getValue().menuItemProperty());
+		
+		//deliveryStatus = new TableColumn("Status");
+		
+
+		
+		deliveryStatus = new TableColumn<>("Status");
+		deliveryStatus.setPrefWidth(126);
+		deliveryStatus.setStyle( "-fx-alignment: CENTER-RIGHT;");
+		deliveryStatus.setCellValueFactory(
+		    param -> new ReadOnlyObjectWrapper<>(param.getValue())
+		);
+		deliveryStatus.setCellFactory(param -> new TableCell<Inventory, Inventory>() {
+		    private final Button deleteButton = new Button("Arrived");
+
+		    @Override
+		    protected void updateItem(Inventory inventory, boolean empty) {
+		        super.updateItem(inventory, empty);
+
+		        if (inventory == null) {
+		            setGraphic(null);
+		            return;
+		        }
+		        
+	        	setGraphic(deleteButton);
+		        deleteButton.setOnAction(
+		            (event) -> {
+		           		            	
+		            	Inventory inv = getTableView().getItems().get(getIndex());
+			            String str = inv.getMenuItem();
+			            
+			            //TODO: Need to add the other order types
+			            if (str.equals("Beef Order (25 lb)")){
+			            	beefT += 25;
+				            beefStock.setText(String.format("%.2f", (beefT)));
+			            }
+			            else
+			            {
+			            	System.out.println("No logic defined for "+str);
+			            }			         
+		            	
+			            getTableView().getItems().remove(inventory);
+		            }
+		        );
+	        }
+	        
+		});
+		
 		deliveryTable.setItems(inventories);
 		deliveryTable.setPlaceholder(new Label(""));
+		deliveryTable.getColumns().add(deliveryStatus);
+        
+
 	}
 	
 	public void returnHomeButton(ActionEvent event) throws IOException
@@ -98,6 +152,9 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
 	public void orderItemForDelivery(ActionEvent event)
 	{
 		//System.out.print("I do nothing right now");
@@ -105,7 +162,7 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		String str = b.getText();
 		if(str.equals("Order Beef")) {
 			System.out.println(str);
-			Inventory newItem = new Inventory("beef 25lb", 25.00);
+			Inventory newItem = new Inventory("Beef Order (25 lb)", 25.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 	}
