@@ -1,37 +1,19 @@
 package application.controller;
 
-import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
 import application.model.Financials;
-import application.model.LineChartA;
-import application.model.Order;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
@@ -44,27 +26,22 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 	@FXML 
 	private Label incomeToday;	
 	@FXML 
-	private Label expensesToday;
-	
-	//set up for charts (A - profit, B - income, C - expenses
+	private Label expensesToday;	
+	//Chart and x,y axis
     @FXML
     private LineChart<String, Double> lineChart;
-
     @FXML
     private CategoryAxis x;
-
     @FXML
     private Axis<Double> y;
-    
+    //Toggle Buttons for chart
     @FXML
     private ToggleButton showProfit;
-    
     @FXML
-    private ToggleButton showIncome;
-    
+    private ToggleButton showIncome;   
     @FXML
     private ToggleButton showExpenses;
-	//Series for chart
+	//Series for chart data
 	XYChart.Series<String, Double> seriesP = new XYChart.Series<String, Double>();
 	XYChart.Series<String, Double>  seriesI = new XYChart.Series<String, Double>();
 	XYChart.Series<String, Double>  seriesE = new XYChart.Series<String, Double>();
@@ -81,12 +58,8 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 		try {
 			//uses Financials to read the data from file
 			Financials fl = new Financials();
-			/*--------TESTING FOR undateIncome()-------------
-			fl.updateIncome("01/04/2017", 50.00);
-			fl.updateIncome("01/06/2017", 10.00);
-			----------END TEST-------------------------------*/
 			fl.getData();
-			//gets most recent day's income, expense, and profit
+			//Gets most recent day's income, expense, and profit
 			double income = fl.incomeList.get(fl.incomeList.size()-1);
 			double expenses = fl.expenseList.get(fl.expenseList.size()-1);
 			double profit = income - expenses;
@@ -113,7 +86,8 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 				seriesP.getData().add(new Data<String, Double>(fl.days.get(m), fl.profitList.get(m)));
 			}
 
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("Failed to in Initialize");
 		} 
 	}
@@ -133,8 +107,9 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 			lineChart.getData().addAll(seriesE);
 		}
 		
-	}	
-
+	}
+	
+	//Return to main screen
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	
 		Stage window = (Stage)((Button)event.getSource()).getScene().getWindow();
