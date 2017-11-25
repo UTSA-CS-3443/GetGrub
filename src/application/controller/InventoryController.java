@@ -115,17 +115,19 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		           		            	
 		            	Inventory inv = getTableView().getItems().get(getIndex());
 			            String str = inv.getMenuItem();
+			            Inventory x = new Inventory();
 			            
 			            //TODO: Need to add the other order types
 			            if (str.equals("Beef Order (25 lb)")){
-			            	beefT += 25;
-				            beefStock.setText(String.format("%.2f", (beefT)));
+			            	x.updateInventory("Beef", 25);
+				    
 			            }
 			            else
 			            {
 			            	System.out.println("No logic defined for "+str);
 			            }			         
 		            	
+			            updateLabels();
 			            getTableView().getItems().remove(inventory);
 		            }
 		        );

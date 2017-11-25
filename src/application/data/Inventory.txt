@@ -1,8 +1,8 @@
-Beef = 50
-Chicken = 45
-HardShell = 30
-Tortilla = 30
-Lettuce = 20
-Cheese = 20
-Tea = 30
-Lemons = 30
+Beef = 88.75
+Chicken = 41.5
+HardShell = 17.0
+Tortilla = 21.0
+Lettuce = 15.500000000000005
+Cheese = 15.500000000000005
+Tea = 28.69
+Lemons = 28.5
