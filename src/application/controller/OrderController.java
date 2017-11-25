@@ -2,7 +2,10 @@ package application.controller;
 
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import application.model.Financials;
 import application.model.Order;
 
 public class OrderController implements EventHandler<ActionEvent> {
@@ -295,6 +299,10 @@ public class OrderController implements EventHandler<ActionEvent> {
 	}
 	
 	public void placeOrder(ActionEvent event) {
+		Financials x = new Financials();
+		Date today = new Date();
+    	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    	String y = (dateFormat.format(today));
 		double totalPrice = 0;
 		double taxValue;
 		
@@ -305,16 +313,23 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		taxValue = totalPrice*this.taxAmount;
 		
-		System.out.println(String.format("%.2f", (totalPrice+taxValue)));
-		System.out.println(String.format("Beef %.2f", (this.beef)));
-		System.out.println(String.format("Chicken %.2f", (this.chicken)));
-		System.out.println(String.format("Hard Shell %.2f", (this.hardShell)));
-		System.out.println(String.format("Tortilla %.2f", (this.tortilla)));
-		System.out.println(String.format("Lettuce %.2f", (this.lettuce)));
-		System.out.println(String.format("Cheese %.2f", (this.cheese)));
+		try {
+			x.updateDailyTotals(y, (totalPrice+taxValue), taxValue);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 		
-		System.out.println(String.format("Tea %.2f", (this.tea)));
-		System.out.println(String.format("Lemons %.2f", (this.lemons)));
+//Debug		System.out.println(String.format("%.2f", (totalPrice+taxValue)));
+//Debug		System.out.println(String.format("Beef %.2f", (this.beef)));
+//Debug		System.out.println(String.format("Chicken %.2f", (this.chicken)));
+//Debug		System.out.println(String.format("Hard Shell %.2f", (this.hardShell)));
+//Debug		System.out.println(String.format("Tortilla %.2f", (this.tortilla)));
+//Debug		System.out.println(String.format("Lettuce %.2f", (this.lettuce)));
+//Debug		System.out.println(String.format("Cheese %.2f", (this.cheese)));
+		
+//Debug		System.out.println(String.format("Tea %.2f", (this.tea)));
+//Debug		System.out.println(String.format("Lemons %.2f", (this.lemons)));
 		
 		this.beef = 0;
 		this.chicken = 0;
