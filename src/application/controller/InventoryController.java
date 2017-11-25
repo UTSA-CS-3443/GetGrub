@@ -4,8 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
+import application.model.Financials;
 import application.model.Inventory;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
@@ -159,8 +163,12 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	
 	
 	
-	public void orderItemForDelivery(ActionEvent event)
+	public void orderItemForDelivery(ActionEvent event) throws IOException
 	{
+		Financials x = new Financials();
+		Date today = new Date();
+    	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    	String y = (dateFormat.format(today));
 		//System.out.print("I do nothing right now");
 		Button b = (Button)event.getSource();
 		String str = b.getText();
@@ -169,8 +177,15 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 			Inventory newItem = new Inventory("Beef Order (25 lb)", 25.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
+			//y= todays date, 0.00 = income, 15.00 expense (how much 25 pounds of beef cost from suppliers)
+			x.updateDailyTotals(y, 0.00, 15.00);
+		}
+		else if(str.equals("Order Chicken")) {
+			//TODO
+			System.out.println("");
+		}
+		
 	}
-}
 	
 	
 	public void updateInventoryFromFile() {
