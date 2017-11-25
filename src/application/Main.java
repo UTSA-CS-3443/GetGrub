@@ -21,8 +21,7 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	//Scene mainGUIScene, manageInventoryScene, manageOrdersScene, manageFinacialsScene, manageLaborScene, scheduelingScene;
-	
-	
+
 	//Main
 	
 	@Override
