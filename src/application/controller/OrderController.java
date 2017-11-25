@@ -333,14 +333,14 @@ public class OrderController implements EventHandler<ActionEvent> {
 //Debug		System.out.println(String.format("Tea %.2f", (this.tea)));
 //Debug		System.out.println(String.format("Lemons %.2f", (this.lemons)));
 		
-		p.updateInvetory("Beef", (this.beef*-1));
-		p.updateInvetory("Chicken", (this.chicken*-1));
-		p.updateInvetory("HardShell", (this.hardShell*-1));
-		p.updateInvetory("Tortilla", (this.tortilla*-1));
-		p.updateInvetory("Lettuce", (this.lettuce*-1));
-		p.updateInvetory("Cheese", (this.cheese*-1));
-		p.updateInvetory("Tea", (this.tea*-1));
-		p.updateInvetory("Lemons", (this.lemons*-1));
+		p.updateInventory("Beef", (this.beef*-1));
+		p.updateInventory("Chicken", (this.chicken*-1));
+		p.updateInventory("HardShell", (this.hardShell*-1));
+		p.updateInventory("Tortilla", (this.tortilla*-1));
+		p.updateInventory("Lettuce", (this.lettuce*-1));
+		p.updateInventory("Cheese", (this.cheese*-1));
+		p.updateInventory("Tea", (this.tea*-1));
+		p.updateInventory("Lemons", (this.lemons*-1));
 		
 		
 		

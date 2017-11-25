@@ -58,7 +58,7 @@ public class Inventory {
 		return menuItem;
 	}
 		
-	public void updateInvetory(String item, double val) {
+	public void updateInventory(String item, double val) {
 		String fileName = "./src/application/data/Invetory.txt";    
 	    String line = null;    
 	        
