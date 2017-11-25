@@ -1,32 +1,30 @@
 package application.model;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Order {
 	
 	private StringProperty menuItem;
-	private	final DoubleProperty price;
+	private	final StringProperty price;
 	
 	
 	
-	public Order(String itemOrder,double itemPrice) {
+	public Order(String itemOrder,String itemPrice) {
 		this.menuItem = new SimpleStringProperty(itemOrder);
-		this.price = new SimpleDoubleProperty(itemPrice);
-		
+		this.price = new SimpleStringProperty(itemPrice);	
 	}
 	
-	public void setPrice(double iPrice) {
+	public void setPrice(String iPrice) {
 		this.price.set(iPrice);
 	}
 	
 	public double getPrice() {
-		return price.get();
+		return Double.parseDouble(price.get());
 	}
 	
-	public DoubleProperty priceProperty() {
+	public StringProperty priceProperty() {
 		return price;
 	}
 	

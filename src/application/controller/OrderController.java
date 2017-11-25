@@ -30,7 +30,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 	private TableColumn<Order, String> menuItem;
 	
 	@FXML
-	private TableColumn<Order, Double> price;
+	private TableColumn<Order, String> price;
 	
 	
 	
@@ -74,7 +74,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 	@FXML
 	public void initialize() {
 		menuItem.setCellValueFactory(cellData -> cellData.getValue().menuItemProperty());
-		price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+		price.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
 		orderTable.setItems(getOrderData());
 		orderTable.setPlaceholder(new Label(""));
 		
@@ -99,7 +99,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		String str = b.getText();
 		if(str.equals("Crunchy Taco W/Beef")) {
 			System.out.println(str);
-			Order newItem = new Order(str,1.50);
+			Order newItem = new Order(str,"1.50");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -117,7 +117,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Soft Taco W/Beef")) {
 			System.out.println(str);
-			Order newItem = new Order(str,2.00);
+			Order newItem = new Order(str,"2.00");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -135,7 +135,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Soft Taco W/Chicken")) {
 			System.out.println(str);
-			Order newItem = new Order(str,2.00);
+			Order newItem = new Order(str,"2.00");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -153,7 +153,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Crunchy Taco W/Chicken")) {
 			System.out.println(str);
-			Order newItem = new Order(str,1.50);
+			Order newItem = new Order(str,"1.50");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -171,7 +171,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Beef Burrito")) {
 			System.out.println(str);
-			Order newItem = new Order(str,2.99);
+			Order newItem = new Order(str,"2.99");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -188,7 +188,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Chicken Burrito")) {
 			System.out.println(str);
-			Order newItem = new Order(str,2.79);
+			Order newItem = new Order(str,"2.79");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -213,7 +213,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		String str = b.getText();
 		if(str.equals("Soft Drink")) {
 			System.out.println(str);
-			Order newItem = new Order(str,1.75);
+			Order newItem = new Order(str,"1.75");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -227,7 +227,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Water")) {
 			System.out.println(str);
-			Order newItem = new Order(str,.25);
+			Order newItem = new Order(str,".25");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -242,7 +242,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Tea")) {
 			System.out.println(str);
-			Order newItem = new Order(str,1.00);
+			Order newItem = new Order(str,"1.00");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -257,7 +257,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		else if(str.equals("Lemonade")) {
 			System.out.println(str);
-			Order newItem = new Order(str,1.50);
+			Order newItem = new Order(str,"1.50");
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
@@ -316,6 +316,25 @@ public class OrderController implements EventHandler<ActionEvent> {
 		System.out.println(String.format("Tea %.2f", (this.tea)));
 		System.out.println(String.format("Lemons %.2f", (this.lemons)));
 		
+		this.beef = 0;
+		this.chicken = 0;
+		this.hardShell = 0;
+		this.tortilla = 0;
+		this.lettuce = 0;
+		this.cheese = 0;
+		this.tea = 0;
+		this.lemons = 0;
+		
+		double reset = 0;
+		this.subTotalLabel.setText(String.format("%.2f", (reset)));
+		this.taxLabel.setText(String.format("%.2f", reset));
+		this.totalLabel.setText(String.format("%.2f", (reset)));
+		
+		orders.clear();
+		currentOrders.clear();
+	}
+	
+	public void clearOrder(ActionEvent event) {		
 		this.beef = 0;
 		this.chicken = 0;
 		this.hardShell = 0;
