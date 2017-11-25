@@ -59,7 +59,7 @@ public class Inventory {
 	}
 		
 	public void updateInventory(String item, double val) {
-		String fileName = "./src/application/data/Invetory.txt";    
+		String fileName = "./src/application/data/Inventory.txt";    
 	    String line = null;    
 	        
 	    try {
@@ -91,7 +91,7 @@ public class Inventory {
             	newLines.add(i+" = "+Double.toString(amountList.get(q)));
             	q++;
             }
-            Files.write(Paths.get("./src/application/data/Invetory.txt"), newLines, StandardCharsets.UTF_8);
+            Files.write(Paths.get("./src/application/data/Inventory.txt"), newLines, StandardCharsets.UTF_8);
 	    }
         catch(FileNotFoundException ex) {
             System.out.println("Unable to open file '" + fileName + "'");                

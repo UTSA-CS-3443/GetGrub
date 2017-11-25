@@ -1,5 +1,8 @@
 package application.controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -58,9 +61,9 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	//private TableColumn<Inventory, Inventory> deliveryStatus; 
 	
 	
-	private double beefT = 50.00;
-	private double chickenT = 35.00;
-	private double shellT = 15.00;
+	private double beefT;
+	private double chickenT;
+	private double shellT;
 	private double tortillaT;
 	private double lettuceT;
 	private double cheeseT;
@@ -168,8 +171,90 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 }
 	
 	
-	public void updateLabels() {
+	public void updateInventoryFromFile() {
+		String fileName = "./src/application/data/Inventory.txt";    
+	    String line = null;    
+	    ArrayList<String> itemList = new ArrayList<String>();
+        ArrayList<Double> amountList = new ArrayList<Double>();
+	        
+	    try {
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            
+            while((line = bufferedReader.readLine()) != null) {
+                String[] values = line.split(" = ");
+               
+            	String a = values[0];
+            	double b = Double.parseDouble(values[1]);
+            	itemList.add(a);
+            	amountList.add(b);	
+	            }
+            bufferedReader.close();
+	    }
+        catch(FileNotFoundException ex) {
+            System.out.println("Unable to open file '" + fileName + "'");                
+        }
+        catch(IOException ex) {
+            System.out.println("Error reading file '" + fileName + "'");                  
+        }
 		
+	    int z = 0;
+	    for(String i: itemList) {
+	    	if(i.equals("Beef")) {
+	    		System.out.println(i);
+	    		this.beefT = amountList.get(z);
+	    	}
+	    	else if(i.equals("Chicken")) {
+	    		System.out.println(i);
+	    		this.chickenT = amountList.get(z);
+	    	}
+	    	else if(i.equals("HardShell")) {
+	    		System.out.println(i);
+	    		this.shellT = amountList.get(z);
+	    		
+	    	}
+	    	else if(i.equals("Tortilla")) {
+	    		System.out.println(i);
+	    		this.tortillaT = amountList.get(z);
+	    	
+	    	}
+	    	else if(i.equals("Lettuce")) {
+	    		System.out.println(i);
+	    		this.lettuceT = amountList.get(z);
+	    		
+	    	}
+			else if(i.equals("Cheese")) {
+				System.out.println(i);
+				this.cheeseT = amountList.get(z);
+				    		
+			}
+			else if(i.equals("Tea")) {
+				System.out.println(i);
+				this.teaT = amountList.get(z);
+				
+			}
+			else if(i.equals("Lemons")) {
+				System.out.println(i);
+				this.lemonT = amountList.get(z);
+				
+			}
+			else {
+				System.out.println(i+" Not Found!");
+			}
+	    	z++;
+	    }
+		
+//		this.beefT;
+//		this.chickenT;
+//		this.shellT;
+//		this.tortillaT;
+//		this.lettuceT;
+//		this.cheeseT;
+//		this.teaT;
+//		this.lemonT;
+	}
+	public void updateLabels() {
+		updateInventoryFromFile();
 		this.beefStock.setText(String.format("%.2f", (beefT)));
 		this.chickenStock.setText(String.format("%.2f", chickenT));
 		this.hardSStock.setText(String.format("%.2f", (shellT)));
@@ -179,6 +264,7 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		this.teaStock.setText(String.format("%.2f", (teaT)));
 		this.lemonStock.setText(String.format("%.2f", (lemonT)));
 	}
+	
 	
 	/*
 	 * public addToTotal(String itemName) {
