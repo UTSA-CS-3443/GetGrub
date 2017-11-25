@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import application.model.Financials;
+import application.model.Labor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -36,6 +37,7 @@ public class Main extends Application {
 		}
 	}
 	
+	
 	static public void checkEmployeesPaid(String x) {
 		String fileName = "./src/application/data/EmployeePaid.txt";    
         String line = null;    
@@ -55,15 +57,18 @@ public class Main extends Application {
             bufferedReader.close();
             
             if (dateExist == false) {
+            	double pay;
+            	Labor empList = new Labor();
+            	pay = empList.payEmployees("./src/application/data/Employees.txt");
             	System.out.println("Paying Employees");
             	try {
             		File fout = new File("./src/application/data/EmployeePaid.txt");
             		
             		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fout, true));
             		
-            		//Financials y = new Financials();
+            		Financials y = new Financials();
             		
-            		//y.updateDailyTotals(x, 0.00, 0.00);
+            		y.updateDailyTotals(x, 0.00, pay);
             		
             		bufferedWriter.write(x);
             		bufferedWriter.newLine();
@@ -96,7 +101,7 @@ public class Main extends Application {
         	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         	System.out.println(dateFormat.format(today));
         	
-        	//checkEmployeesPaid(dateFormat.format(today));
+        	checkEmployeesPaid(dateFormat.format(today));
         }
  
 		launch(args);
