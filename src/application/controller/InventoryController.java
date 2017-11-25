@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import application.model.Inventory;
-import application.model.Order;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

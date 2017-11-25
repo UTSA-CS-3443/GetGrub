@@ -1,1 +1,2 @@
-["fname","lname","experience",desiredJob]
+Williams, Jay, 2 years as lead Chef at Huisache Grill, Head Chef
+Witherson, Michael, none, Bus person

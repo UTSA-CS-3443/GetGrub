@@ -246,7 +246,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 			currentOrders.add(newItem);
 			orders.add(newItem);
 			updateTotalLabels();
-			this.tea += .21;
+			this.tea += 1.31;
 			
 //Debug			System.out.print(newItem.getMenuItem());
 //Debug			System.out.print(" ");

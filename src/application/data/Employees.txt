@@ -1,1 +1,4 @@
-["fname","lname","role",wage]
+McClure, John, Bus person, Hourly, 11.50
+Griswold-wheeler, Arielle, Hourly, Chef, 17.80
+Zaleski, Tristan, Sever, Hourly, 14.50
+Thomas, Joshua, Owner, Annually, 79222

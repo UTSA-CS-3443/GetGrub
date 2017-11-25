@@ -1,8 +1,8 @@
-beef = 0
-chicken = 0
-hardShell = 0
-tortilla = 0
-lettuce = 0
-cheese = 0
-tea = 0
-lemons = 0
+Beef = 50
+Chicken = 45
+Hard_Shell = 30
+Tortilla = 30
+Lettuce = 20
+Cheese = 20
+Tea = 30
+Lemons = 30
