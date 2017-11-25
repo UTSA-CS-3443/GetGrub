@@ -21,6 +21,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import application.model.Financials;
+import application.model.Inventory;
 import application.model.Order;
 
 public class OrderController implements EventHandler<ActionEvent> {
@@ -300,6 +301,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 	
 	public void placeOrder(ActionEvent event) {
 		Financials x = new Financials();
+		Inventory p = new Inventory();
 		Date today = new Date();
     	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
     	String y = (dateFormat.format(today));
@@ -330,6 +332,17 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 //Debug		System.out.println(String.format("Tea %.2f", (this.tea)));
 //Debug		System.out.println(String.format("Lemons %.2f", (this.lemons)));
+		
+		p.updateInvetory("Beef", (this.beef*-1));
+		p.updateInvetory("Chicken", (this.chicken*-1));
+		p.updateInvetory("HardShell", (this.hardShell*-1));
+		p.updateInvetory("Tortilla", (this.tortilla*-1));
+		p.updateInvetory("Lettuce", (this.lettuce*-1));
+		p.updateInvetory("Cheese", (this.cheese*-1));
+		p.updateInvetory("Tea", (this.tea*-1));
+		p.updateInvetory("Lemons", (this.lemons*-1));
+		
+		
 		
 		this.beef = 0;
 		this.chicken = 0;

@@ -1,6 +1,6 @@
 Beef = 50
 Chicken = 45
-Hard_Shell = 30
+HardShell = 30
 Tortilla = 30
 Lettuce = 20
 Cheese = 20
