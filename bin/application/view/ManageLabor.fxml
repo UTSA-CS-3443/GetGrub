@@ -23,11 +23,11 @@
                      <children>
                         <TableView fx:id="employeeTable" prefHeight="386.0" prefWidth="625.0">
                           <columns>
-                            <TableColumn prefWidth="131.0" text="Last Name" />
-                            <TableColumn prefWidth="145.0" text="First Name" />
-                              <TableColumn prefWidth="116.0" text="Role" />
-                              <TableColumn prefWidth="100.0" text="Wage/Annual" />
-                              <TableColumn prefWidth="63.0" text="Hours" />
+                            <TableColumn fx:id="lastNameColumn" prefWidth="131.0" text="Last Name" />
+                            <TableColumn fx:id="firstNameColumn" prefWidth="145.0" text="First Name" />
+                              <TableColumn fx:id="roleColumn" prefWidth="116.0" text="Role" />
+                              <TableColumn fx:id="payTypeColumn" prefWidth="100.0" text="Wage/Annual" />
+                              <TableColumn fx:id="hoursColumn" prefWidth="63.0" text="Hours" />
                           </columns>
                         </TableView>
                      </children>
@@ -42,10 +42,10 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="237.0">
                                  <children>
-                                    <TableView layoutX="-1.0" layoutY="-1.0" prefHeight="388.0" prefWidth="306.0">
+                                    <TableView fx:id="applicantsTable" layoutX="-1.0" layoutY="-1.0" prefHeight="388.0" prefWidth="306.0">
                                        <columns>
-                                          <TableColumn prefWidth="115.0" text="Last Name" />
-                                          <TableColumn prefWidth="125.0" text="First Name" />
+                                          <TableColumn fx:id="lastNameApplicantColumn" prefWidth="115.0" text="Last Name" />
+                                          <TableColumn fx:id="firstNameApplicantColumn" prefWidth="125.0" text="First Name" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -55,13 +55,14 @@
                                     <Label layoutX="32.0" layoutY="30.0" text="Name:" />
                                     <Label layoutX="32.0" layoutY="63.0" text="Desired Role:" />
                                     <Label layoutX="32.0" layoutY="95.0" text="Experience:" />
-                                    <TextArea layoutX="46.0" layoutY="112.0" prefHeight="113.0" prefWidth="222.0" />
-                                    <TextArea layoutX="46.0" layoutY="256.0" prefHeight="113.0" prefWidth="222.0" />
+                                    <TextArea fx:id="experienceText" layoutX="46.0" layoutY="112.0" prefHeight="113.0" prefWidth="222.0" />
+                                    <TextArea fx:id="educationText" layoutX="46.0" layoutY="256.0" prefHeight="113.0" prefWidth="222.0" />
                                     <Label layoutX="32.0" layoutY="239.0" text="Education:" />
                                     <Label layoutX="105.0" layoutY="6.0" text="Applicant Information" />
-                                    <Label layoutX="78.0" layoutY="30.0" />
-                                    <Label layoutX="112.0" layoutY="63.0" />
-                                    <Label layoutX="105.0" layoutY="95.0" />
+                                    <Label fx:id="nameLabel" layoutX="78.0" layoutY="30.0" />
+                                    <Label fx:id="desiredRoleLabel" layoutX="112.0" layoutY="63.0" />
+                                    <Button layoutX="266.0" layoutY="2.0" mnemonicParsing="false" onAction="#hireNewEmployee" prefHeight="25.0" prefWidth="55.0" text="Hire" />
+                                    <Button layoutX="266.0" layoutY="35.0" mnemonicParsing="false" onAction="#removeApplicant" text="Decline" />
                                  </children>
                               </AnchorPane>
                           </items>

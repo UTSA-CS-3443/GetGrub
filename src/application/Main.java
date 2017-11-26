@@ -96,9 +96,9 @@ public class Main extends Application {
         SimpleDateFormat simpleDateformat = new SimpleDateFormat("EEEE"); 
  
         if(simpleDateformat.format(today).equals("Saturday")) {
-        	System.out.println(today);
+        	//System.out.println(today);
         	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        	System.out.println(dateFormat.format(today));
+        	//System.out.println(dateFormat.format(today));
         	
         	checkEmployeesPaid(dateFormat.format(today));
         }
