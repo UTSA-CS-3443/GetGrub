@@ -24,10 +24,10 @@
                         <TableView fx:id="employeeTable" prefHeight="386.0" prefWidth="625.0">
                           <columns>
                             <TableColumn fx:id="lastNameColumn" prefWidth="131.0" text="Last Name" />
-                            <TableColumn fx:id="firstNameColumn" prefWidth="145.0" text="First Name" />
-                              <TableColumn fx:id="roleColumn" prefWidth="116.0" text="Role" />
-                              <TableColumn fx:id="payTypeColumn" prefWidth="100.0" text="Wage/Annual" />
-                              <TableColumn fx:id="hoursColumn" prefWidth="63.0" text="Hours" />
+                            <TableColumn fx:id="firstNameColumn" prefWidth="122.0" text="First Name" />
+                              <TableColumn fx:id="roleColumn" prefWidth="123.0" text="Role" />
+                              <TableColumn fx:id="payTypeColumn" prefWidth="85.0" text="Wage/Annual" />
+                              <TableColumn fx:id="hoursColumn" prefWidth="43.0" text="Hours" />
                           </columns>
                         </TableView>
                      </children>
@@ -44,8 +44,8 @@
                                  <children>
                                     <TableView fx:id="applicantsTable" layoutX="-1.0" layoutY="-1.0" prefHeight="388.0" prefWidth="306.0">
                                        <columns>
-                                          <TableColumn fx:id="lastNameApplicantColumn" prefWidth="115.0" text="Last Name" />
-                                          <TableColumn fx:id="firstNameApplicantColumn" prefWidth="125.0" text="First Name" />
+                                          <TableColumn fx:id="lastNameApplicantColumn" prefWidth="140.0" text="Last Name" />
+                                          <TableColumn fx:id="firstNameApplicantColumn" prefWidth="145.0" text="First Name" />
                                        </columns>
                                     </TableView>
                                  </children>

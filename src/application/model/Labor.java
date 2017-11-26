@@ -24,17 +24,16 @@ public class Labor {
 			
 		}
 		
-		public Labor (String firstN, String lastN, String rol, String exp, String edu)
+		public Labor (String lastN, String firstN, String rol, String exp, String edu)
 		{
 			this.fName = new SimpleStringProperty(firstN);
 			this.lName = new SimpleStringProperty(lastN);
 			this.role = new SimpleStringProperty(rol);
 			this.experience = new SimpleStringProperty(exp);
 			this.education = new SimpleStringProperty(edu);
-			
 		}
 		
-		public Labor(String firstN,String lastN, String rol, String paymentT, String payment, String hrs) {
+		public Labor(String lastN, String firstN, String rol, String paymentT, String payment, String hrs) {
 			this.fName = new SimpleStringProperty(firstN);
 			this.lName = new SimpleStringProperty(lastN);
 			this.role = new SimpleStringProperty(rol);

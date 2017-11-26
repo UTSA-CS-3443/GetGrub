@@ -1,4 +1,4 @@
-McClure, John, Bus person, Hourly, 11.50, 25
-Griswold-wheeler, Arielle, Chef, Hourly, 17.80, 40
-Zaleski, Tristan, Sever, Hourly, 14.50, 30
-Thomas, Joshua, Owner, Annually, 79222, 40
+McClure, John, Bus person, Hourly, 11.50, 25.0
+Griswold-wheeler, Arielle, Chef, Hourly, 17.80, 40.0
+Zaleski, Tristan, Sever, Hourly, 14.50, 30.0
+Thomas, Joshua, Owner, Annually, 79222, 40.0
