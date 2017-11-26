@@ -13,18 +13,17 @@
             <Image url="@../../../bin/application/view/getgrub.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="125.0" layoutY="159.0" prefHeight="249.0" prefWidth="200.0" spacing="100.0">
+      <VBox alignment="CENTER" layoutX="84.0" layoutY="159.0" prefHeight="249.0" prefWidth="200.0" spacing="100.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Orders" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Labor" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Orders" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Labor" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="325.0" layoutY="159.0" prefHeight="249.0" prefWidth="200.0" spacing="100.0">
+      <VBox alignment="CENTER" layoutX="365.0" layoutY="159.0" prefHeight="249.0" prefWidth="200.0" spacing="100.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Inventory" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Financials" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Inventory" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Manage Financials" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
          </children>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenButton" prefHeight="50.0" prefWidth="84.0" style="-fx-background-color: #252b3a; -fx-border-color: white;" text="Options &amp; Preferences" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
    </children>
 </AnchorPane>
