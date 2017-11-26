@@ -125,8 +125,34 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 			            if (str.equals("Beef Order (25 lb)")){
 			            	x.updateInventory("Beef", 25);
 				    
+			            }else if (str.equals("Chicken Order (25 lbs)")){
+			            	x.updateInventory("Chicken", 25);
+				    
 			            }
-			            else
+			            else if (str.equals("Hard Shell Order (30 qty)")){
+			            	x.updateInventory("HardShell", 30);
+				    
+			            }
+			            else if (str.equals("Tortillas Order (30 qty)")){
+			            	x.updateInventory("Tortilla", 30);
+				    
+			            }
+			            else if (str.equals("Lettuce Order (15 lbs)")){
+			            	x.updateInventory("Lettuce", 15);
+				    
+			            }
+			            else if (str.equals("Cheese Order (15 lbs)")){
+			            	x.updateInventory("Cheese", 15);
+				    
+			            }
+			            else if (str.equals("Tea Order (20 lbs)")){
+			            	x.updateInventory("Tea", 20);
+				    
+			            }
+			            else if (str.equals("Lemons Order (30 qty)")){
+			            	x.updateInventory("Lemons", 30);
+				    
+			            } else
 			            {
 			            	System.out.println("No logic defined for "+str);
 			            }			         
@@ -181,10 +207,54 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 			x.updateDailyTotals(y, 0.00, 15.00);
 		}
 		else if(str.equals("Order Chicken")) {
-			//TODO
-			System.out.println("");
+			System.out.println(str);
+			Inventory newItem = new Inventory("Chicken Order (25 lbs)", 25.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 8.39);
 		}
-		
+		else if(str.equals("Order Shells")) {
+			System.out.println(str);
+			Inventory newItem = new Inventory("Hard Shell Order (30 qty)", 30.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 7.20);
+		}
+		else if(str.equals("Order Tortillas")) {
+			System.out.println(str);
+			Inventory newItem = new Inventory("Tortillas Order (30 qty)", 30.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 8.20);
+		}
+		else if(str.equals("Order Lettuce")) {
+			System.out.println(str);
+			Inventory newItem = new Inventory("Lettuce Order (15 lbs)", 15.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 3.20);
+		}
+		else if(str.equals("Order Cheese")) {
+			System.out.println(str);
+			Inventory newItem = new Inventory("Cheese Order (15 lbs)", 15.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 5.20);
+		}
+		else if(str.equals("Order Tea")) {
+			System.out.println(str);
+			Inventory newItem = new Inventory("Tea Order (20 lbs)", 20.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 10.20);
+		}
+		else if(str.equals("Order Lemons")) {
+			System.out.println(str);
+			Inventory newItem = new Inventory("Lemons Order (30 qty)", 30.00);
+			currentInventories.add(newItem);
+			inventories.add(newItem);
+			x.updateDailyTotals(y, 0.00, 12.20);
+		}
 	}
 	
 	
