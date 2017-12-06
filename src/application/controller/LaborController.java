@@ -302,7 +302,7 @@ public class LaborController implements EventHandler<ActionEvent> {
 	    	String hrs = null;
 	    	
 	    	String g = x+", "+x1+", "+x2+", "+x3;
-	    	System.out.println(g);
+	    	//System.out.println(g);
 	    	
 	    	if(x1.equals("Head Chef")) {
 	    		newPaymentType = "Hourly";
@@ -374,7 +374,7 @@ public class LaborController implements EventHandler<ActionEvent> {
 		String fileName = "./src/application/data/Applicants.txt";    
 	    String line = null;   
 	    ArrayList<String> newLines = new ArrayList<String>();
-	    System.out.println(p);
+	    //System.out.println(p);
 	    
 		try {
 				FileReader fileReader = new FileReader(fileName);
