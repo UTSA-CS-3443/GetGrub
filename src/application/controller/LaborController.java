@@ -383,7 +383,7 @@ public class LaborController implements EventHandler<ActionEvent> {
 	            while((line = bufferedReader.readLine()) != null) {
 	            	if(!line.equals(p)) {
 	            		newLines.add(line);
-	            		System.out.println(line);
+	            		//System.out.println(line);
 	            	}
 	            	
 		        }
@@ -420,7 +420,7 @@ public class LaborController implements EventHandler<ActionEvent> {
 	            while((line = bufferedReader.readLine()) != null) {
 	            	if(!line.equals(p)) {
 	            		newLines.add(line);
-	            		System.out.println(line);
+	            		//System.out.println(line);
 	            	}
 	            	
 		        }
