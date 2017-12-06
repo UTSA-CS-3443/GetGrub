@@ -139,13 +139,13 @@ public class LaborController implements EventHandler<ActionEvent> {
 			            else {
 			            	double num = lab.getPayment();
 			            	String pay = String.format("%.2f",num);
-			            	System.out.println(pay);
-			            	System.out.println(pay);
-			            	System.out.println(pay);
+			            	//System.out.println(pay);
+			            	//System.out.println(pay);
+			            	//System.out.println(pay);
 			            	p = new Labor(lab.getLName(),lab.getFName(),lab.getRole(),"Hourly",pay,Double.toString(lab.getHours()));
 			         
-			            	System.out.println(p.getPayment());
-			            	System.out.println(pay);
+			            	//System.out.println(p.getPayment());
+			            	//System.out.println(pay);
 			            }
 			            
 			            getTableView().getItems().remove(labor);
@@ -411,7 +411,7 @@ public class LaborController implements EventHandler<ActionEvent> {
 		String fileName = "./src/application/data/Employees.txt";    
 	    String line = null;   
 	    ArrayList<String> newLines = new ArrayList<String>();
-	    System.out.println(p);
+	    //System.out.println(p);
 	    
 		try {
 				FileReader fileReader = new FileReader(fileName);

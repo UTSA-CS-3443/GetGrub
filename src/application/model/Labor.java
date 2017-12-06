@@ -279,16 +279,16 @@ public class Labor {
 	            
 	           
 	            while((line = bufferedReader.readLine()) != null) {
-	            	System.out.println(line);
+	            	//System.out.println(line);
 	            	List<String> splitLine = Arrays.asList(line.split(", "));
-	            	System.out.println(splitLine.get(2));
+	            	//System.out.println(splitLine.get(2));
 	            	if(splitLine.get(3).equals("Hourly")) {
 	            		total+= Double.parseDouble(splitLine.get(4)) * Double.parseDouble(splitLine.get(5));
-		            	System.out.println(total);
+		            	//System.out.println(total);
 	            	}
 	            	else if(splitLine.get(3).equals("Annually")) {
 	            		total+= Double.parseDouble(splitLine.get(4))/52;
-		            	System.out.println(total);
+		            	//System.out.println(total);
 	            	}
 	            	
 	            }

@@ -123,7 +123,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 		String str = b.getText();
 		if(str.equals("Crunchy Taco W/Beef")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"1.50");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -141,7 +141,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Soft Taco W/Beef")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"2.00");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -159,7 +159,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Soft Taco W/Chicken")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"2.00");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -177,7 +177,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Crunchy Taco W/Chicken")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"1.50");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -195,7 +195,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Beef Burrito")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"2.99");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -212,7 +212,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Chicken Burrito")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"2.79");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -237,7 +237,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		Button b = (Button)event.getSource();
 		String str = b.getText();
 		if(str.equals("Soft Drink")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"1.75");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -251,7 +251,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Water")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,".25");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -266,7 +266,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Tea")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"1.00");
 			currentOrders.add(newItem);
 			orders.add(newItem);
@@ -281,7 +281,7 @@ public class OrderController implements EventHandler<ActionEvent> {
 		}
 		
 		else if(str.equals("Lemonade")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Order newItem = new Order(str,"1.50");
 			currentOrders.add(newItem);
 			orders.add(newItem);

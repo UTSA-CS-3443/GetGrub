@@ -216,7 +216,7 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		Button b = (Button)event.getSource();
 		String str = b.getText();
 		if(str.equals("Order Beef")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Beef Order (25 lb)", 25.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
@@ -224,49 +224,49 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 			x.updateDailyTotals(y, 0.00, 15.00);
 		}
 		else if(str.equals("Order Chicken")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Chicken Order (25 lbs)", 25.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 			x.updateDailyTotals(y, 0.00, 8.39);
 		}
 		else if(str.equals("Order Shells")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Hard Shell Order (30 qty)", 30.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 			x.updateDailyTotals(y, 0.00, 7.20);
 		}
 		else if(str.equals("Order Tortillas")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Tortillas Order (30 qty)", 30.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 			x.updateDailyTotals(y, 0.00, 8.20);
 		}
 		else if(str.equals("Order Lettuce")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Lettuce Order (15 lbs)", 15.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 			x.updateDailyTotals(y, 0.00, 3.20);
 		}
 		else if(str.equals("Order Cheese")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Cheese Order (15 lbs)", 15.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 			x.updateDailyTotals(y, 0.00, 5.20);
 		}
 		else if(str.equals("Order Tea")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Tea Order (20 lbs)", 20.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
 			x.updateDailyTotals(y, 0.00, 10.20);
 		}
 		else if(str.equals("Order Lemons")) {
-			System.out.println(str);
+			//System.out.println(str);
 			Inventory newItem = new Inventory("Lemons Order (30 qty)", 30.00);
 			currentInventories.add(newItem);
 			inventories.add(newItem);
@@ -307,40 +307,40 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	    int z = 0;
 	    for(String i: itemList) {
 	    	if(i.equals("Beef")) {
-	    		System.out.println(i);
+	    		//System.out.println(i);
 	    		this.beefT = amountList.get(z);
 	    	}
 	    	else if(i.equals("Chicken")) {
-	    		System.out.println(i);
+	    		//System.out.println(i);
 	    		this.chickenT = amountList.get(z);
 	    	}
 	    	else if(i.equals("HardShell")) {
-	    		System.out.println(i);
+	    		//System.out.println(i);
 	    		this.shellT = amountList.get(z);
 	    		
 	    	}
 	    	else if(i.equals("Tortilla")) {
-	    		System.out.println(i);
+	    		//System.out.println(i);
 	    		this.tortillaT = amountList.get(z);
 	    	
 	    	}
 	    	else if(i.equals("Lettuce")) {
-	    		System.out.println(i);
+	    		//System.out.println(i);
 	    		this.lettuceT = amountList.get(z);
 	    		
 	    	}
 			else if(i.equals("Cheese")) {
-				System.out.println(i);
+				//System.out.println(i);
 				this.cheeseT = amountList.get(z);
 				    		
 			}
 			else if(i.equals("Tea")) {
-				System.out.println(i);
+				//System.out.println(i);
 				this.teaT = amountList.get(z);
 				
 			}
 			else if(i.equals("Lemons")) {
-				System.out.println(i);
+				//System.out.println(i);
 				this.lemonT = amountList.get(z);
 				
 			}
