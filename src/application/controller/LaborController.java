@@ -32,7 +32,7 @@ import javafx.stage.Stage;
 /**
  * The Labor Controller contains the FXML items for the Manage Labor screen, along with methods to remove employees or 
  * hire new applicants
- * @author John
+ * @author Arielle Griswold-wheeler
  *
  */
 public class LaborController implements EventHandler<ActionEvent> {
