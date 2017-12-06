@@ -29,7 +29,12 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
+/**
+ * The Labor Controller contains the FXML items for the Manage Labor screen, along with methods to remove employees or 
+ * hire new applicants
+ * @author John
+ *
+ */
 public class LaborController implements EventHandler<ActionEvent> {
 //	@FXML
 	
@@ -79,12 +84,18 @@ public class LaborController implements EventHandler<ActionEvent> {
 	
 	private TableColumn<Labor, Labor> terminateEmployee;
 	
+	/**
+	 * constructor for the Manage Labor screen.
+	 */
 	public LaborController() {
 		super();
 		
 		
 	}
 	
+	/**
+	 * this method is called after the constructor to set up a few FXML items
+	 */
 	@FXML
 	public void initialize() {
 		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lNameProperty());
@@ -173,6 +184,12 @@ public class LaborController implements EventHandler<ActionEvent> {
 	    });    
 	}
 
+	
+	/**
+	 * returns to GetGrubs main menu
+	 * @param event mouse click
+	 * @throws IOException file not found
+	 */
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	
 		Stage window = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -182,6 +199,9 @@ public class LaborController implements EventHandler<ActionEvent> {
 	}
 		
 	
+	/**
+	 * setup for the employee list.
+	 */
 	public ObservableList<Labor> getEmployeeData(){
 		String fileName = "./src/application/data/Employees.txt";    
 	    String line = null;   
@@ -218,6 +238,10 @@ public class LaborController implements EventHandler<ActionEvent> {
 		return this.employees;
 	}
 	
+	/**
+	 * setup for the applicant list
+	 * @return list of applicants
+	 */
 	public ObservableList<Labor> getApplicantData(){
 		String fileName = "./src/application/data/Applicants.txt";    
 	    String line = null;   
@@ -255,6 +279,10 @@ public class LaborController implements EventHandler<ActionEvent> {
 		return this.applicants;
 	}
 	
+	/**
+	 * when the Hire Applicant button is clicked they are added to the employee list and txt file
+	 * @param event mouse click
+	 */
 	public void hireNewEmployee(ActionEvent event) {
 		
 		if( applicantsTable.getSelectionModel().getSelectedItem() != null) {
@@ -326,12 +354,20 @@ public class LaborController implements EventHandler<ActionEvent> {
 		
 	}
 	
+	/**
+	 * remove applicant from list
+	 * @param event mouse click
+	 */
 	public void removeApplicant(ActionEvent event) {
 		Labor y = applicantsTable.getSelectionModel().getSelectedItem();
 		removeEntryFromApplicantFile(y);
 		resetApplicationLabels();
 	}
 	
+	/**
+	 * remove applicant from file
+	 * @param x file name
+	 */
 	public void removeEntryFromApplicantFile(Labor x) {
 		String p =x.getLName()+", "+x.getFName()+", "+x.getRole()+", "+x.getExperience()+", "+x.getEducation();
 		
@@ -364,6 +400,10 @@ public class LaborController implements EventHandler<ActionEvent> {
         }
 	}
 	
+	/**
+	 * remove employee from file
+	 * @param x file name
+	 */
 	public void removeEntryFromEmployeeFile(Labor x) {
 
 		String p =x.getLName()+", "+x.getFName()+", "+x.getRole()+", "+x.getPaymentType()+", "+String.format("%.2f",x.getPayment())+", "+x.getHours();
@@ -397,6 +437,9 @@ public class LaborController implements EventHandler<ActionEvent> {
         }
 	}
 	
+	/**
+	 * clears applicant review labels
+	 */
 	public void resetApplicationLabels() {
 		this.nameLabel.setText("");
     	

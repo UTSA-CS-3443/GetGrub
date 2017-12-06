@@ -24,6 +24,11 @@ import application.model.Financials;
 import application.model.Inventory;
 import application.model.Order;
 
+/**
+ * The Order Controller Contains the FXML items on the Manage Order screen, along with the ability to place an order for a customer
+ * @author John McClure
+ *
+ */
 public class OrderController implements EventHandler<ActionEvent> {
 	
 	
@@ -71,11 +76,17 @@ public class OrderController implements EventHandler<ActionEvent> {
 	private final double taxAmount = .0825;
 	
 
+	/**
+	 * constructor sets up the Manage Orders screen
+	 */
 	public OrderController() {
 		super();
 		this.currentOrders = new ArrayList<Order>();		
 	}
 	
+	/**
+	 * this method is called after the constructor to set up a few FXML items
+	 */
 	@FXML
 	public void initialize() {
 		menuItem.setCellValueFactory(cellData -> cellData.getValue().menuItemProperty());
@@ -85,10 +96,17 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 	}
 	
+	/**
+	 * sets up the order
+	 * @return list of orders
+	 */
 	public ObservableList<Order> getOrderData(){
 		return this.orders;
 	}
 	
+	/**
+	 * returns to GetGrub main page
+	 */
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	
 		Stage window = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -97,7 +115,9 @@ public class OrderController implements EventHandler<ActionEvent> {
 		window.setScene(viewScene);
 	}
 	
-	
+	/**
+	 * adds the selected item to the order table
+	 */
 	public void addFoodToTable(ActionEvent event) {
 		Button b = (Button)event.getSource();
 		
@@ -283,6 +303,9 @@ public class OrderController implements EventHandler<ActionEvent> {
 			
 	}
 	
+	/**
+	 * calculates the total price of all the items on the order table
+	 */
 	public void updateTotalLabels() {
 		double totalPrice = 0;
 		double taxValue;
@@ -299,6 +322,10 @@ public class OrderController implements EventHandler<ActionEvent> {
 		
 	}
 	
+	/**
+	 * confirm and place the customers order
+	 * @param event mouse click
+	 */
 	public void placeOrder(ActionEvent event) {
 		Financials x = new Financials();
 		Inventory p = new Inventory();
@@ -362,6 +389,9 @@ public class OrderController implements EventHandler<ActionEvent> {
 		currentOrders.clear();
 	}
 	
+	/**
+	 * clears the order table
+	 */
 	public void clearOrder(ActionEvent event) {		
 		this.beef = 0;
 		this.chicken = 0;

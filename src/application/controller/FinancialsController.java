@@ -18,6 +18,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
+/**
+ * The Financials Controller Contains the FXML items on the Manage Financials screen, along with a graph to show the Daily income,
+ * expenses, and profit.
+ * @author Joshua Thomas
+ *
+ */
 public class FinancialsController  implements EventHandler<ActionEvent> {
 	
 	//labels for Today's Totals section	
@@ -47,12 +53,15 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 	XYChart.Series<String, Double>  seriesE = new XYChart.Series<String, Double>();
     
     /**
-	 * constructor sets up a Calculator
+	 * constructor for Manage Finacials screen
 	 */
 	public FinancialsController() {
 		super();
 	}
 
+	/**
+	 * this method is called after the constructor to set up a few FXML items
+	 */
 	@FXML
 	public void initialize() {
 		try {
@@ -92,6 +101,11 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 		} 
 	}
 	
+	/**
+	 * Displays a chart of the history of each day's income, expenses, and profit. 
+	 * @param event mouse click
+	 * @throws IOException file not found
+	 */
 	// Displays chart based off of which buttons are selected
 	public void showChart(ActionEvent event) throws IOException{
 		//Empties Chart
@@ -109,6 +123,11 @@ public class FinancialsController  implements EventHandler<ActionEvent> {
 		
 	}
 	
+	/**
+	 * returns to GetGrubs main menu
+	 * @param event mouse click
+	 * @throws IOException file not found
+	 */
 	//Return to main screen
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	

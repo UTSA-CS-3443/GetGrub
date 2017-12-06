@@ -27,6 +27,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+/** The Inventory Controller contains FXML items for the Manage Inventory screen, along with the ability to 
+ * re-supply needed items for your restaurant.
+ * 
+ * @author Tristan Zaleski
+ *
+ */
 public class InventoryController  implements EventHandler<ActionEvent> {
 //	@FXML
 	@FXML
@@ -73,19 +79,21 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	private double cheeseT;
 	private double teaT;
 	private double lemonT;
-	
-	/**
-	 * constructor sets up a Calculator
-	 */
 
 	private ArrayList<Inventory> currentInventories;
 	private final ObservableList<Inventory> inventories = FXCollections.observableArrayList();
 	
+	/**
+	 * constructor sets Manage Inventory screen
+	 */
 	public InventoryController() {
 		super();
 		currentInventories = new ArrayList<Inventory>();
 	}
 
+	/**
+	 * this method is called after the constructor to set up a few FXML items
+	 */
 	@FXML
 	public void initialize() {
 		updateLabels();
@@ -172,6 +180,11 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 
 	}
 	
+	/**
+	 * returns to GetGrubs main menu
+	 * @param event mouse click
+	 * @throws IOException file not found
+	 */
 	public void returnHomeButton(ActionEvent event) throws IOException
 	{	
 		Stage window = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -188,7 +201,11 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 	}
 	
 	
-	
+	/**
+	 * this method is called whenever an Order button is clicked, it then places an order for to re-supply the selected item.
+	 * @param event mouse click
+	 * @throws IOException file not found
+	 */
 	public void orderItemForDelivery(ActionEvent event) throws IOException
 	{
 		Financials x = new Financials();
@@ -257,7 +274,9 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 		}
 	}
 	
-	
+	/**
+	 * this method gets the current values for each items stock
+	 */
 	public void updateInventoryFromFile() {
 		String fileName = "./src/application/data/Inventory.txt";    
 	    String line = null;    
@@ -340,6 +359,10 @@ public class InventoryController  implements EventHandler<ActionEvent> {
 //		this.teaT;
 //		this.lemonT;
 	}
+	
+	/**
+	 * refreshes the labels to display the correct value
+	 */
 	public void updateLabels() {
 		updateInventoryFromFile();
 		this.beefStock.setText(String.format("%.2f", (beefT)));

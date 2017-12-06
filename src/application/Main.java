@@ -19,11 +19,19 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+/**
+ * the Main class does the basic setup for the GetGrub application.
+ * @author John McClure
+ *
+ */
 public class Main extends Application {
 	//Scene mainGUIScene, manageInventoryScene, manageOrdersScene, manageFinacialsScene, manageLaborScene, scheduelingScene;
 
 	//Main
 	
+	/**
+	 * the start method is called when the application is started.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -36,7 +44,11 @@ public class Main extends Application {
 		}
 	}
 	
-	
+	/**
+	 * the checkEmployeesPaid method is called on the pay-day of each week, if the employees have not been paid yet
+	 * a deduction is added to the financial "DailyTotals.txt" file.
+	 * @param x file name
+	 */
 	static public void checkEmployeesPaid(String x) {
 		String fileName = "./src/application/data/EmployeePaid.txt";    
         String line = null;    
@@ -89,7 +101,10 @@ public class Main extends Application {
         }
 	}
 	
-	
+	/**
+	 * main method that checks the current date to see if its Employee's pay-day
+	 * @param args arguments 
+	 */
 	public static void main(String[] args) {
 		Date today = new Date();
  

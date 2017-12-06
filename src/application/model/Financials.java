@@ -15,6 +15,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+/**
+ * Financial object that contains each days total income, expenses, and profit.
+ * @author Joshua Thomas 
+ *
+ */
 public class Financials {
 	
 	public ArrayList<String> days;
@@ -23,6 +28,9 @@ public class Financials {
 	public ArrayList<Double> profitList;
 	
 	// Reads DailyTotals.txt file and saves data in ArrayLists days, incomeList, and expenseList
+	/**
+	 * Reads from text file to get the current income and expenses for the day
+	 */
 	public void getData() {
 		String fileName = "./src/application/data/DailyTotals.txt";    
         String line = null;    
@@ -59,6 +67,13 @@ public class Financials {
 	}
 	
 	//Takes in a date, income, and adds the income and expense values to the totals for that day in DailyTotals.txt 
+	/**
+	 * updates the Daily labels, and DailyTotals.txt
+	 * @param date todays date
+	 * @param income todays income
+	 * @param expenses todays expenses
+	 * @throws IOException file not found
+	 */
 	public void updateDailyTotals(String date, Double income, Double expenses) throws IOException {
 		ArrayList<String> newLines = new ArrayList<String>();
 		int i=0;

@@ -10,15 +10,25 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * Main Page of the GetGrub Application, contains 4 buttons leading to tools for restaurant management.
+ * @author John
+ *
+ */
 public class MainController implements EventHandler<ActionEvent> {
 	
 	/**
-	 * constructor sets up a Calculator
+	 * constructor sets up the main page from GetGrub application
 	 */
 	public MainController() {
 		super();
 	}
 
+	/**
+	 * when one of the management options is selected this method loads the corresponding page
+	 * @param event mouse click
+	 * @throws IOException file not found
+	 */
 	public void changeScreenButton(ActionEvent event) throws IOException
 	{
 		Scene viewScene;
